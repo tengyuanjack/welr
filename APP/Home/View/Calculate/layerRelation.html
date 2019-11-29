@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--360浏览器优先以webkit内核解析-->
+
+
+    <title> - 主页示例</title>
+
+    <link rel="shortcut icon" href="__PUBLIC__/favicon.ico"> <link href="__PUBLIC__/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="__PUBLIC__/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <link href="__PUBLIC__/css/animate.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/style.css?v=4.1.0" rel="stylesheet">
+    <link rel="stylesheet" href="__PUBLIC__/css/jquery.orgchart.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/plugins/bootstrap-table/bootstrap-table.min.css">
+
+    <style type="text/css">
+        .individual{
+            height: 30px;
+        }
+        #chart-container {
+          height: 300px;
+          border: 2px solid #aaa;
+        }
+
+        .orgchart {
+          background: #fff;
+        }
+    </style>
+
+</head>
+
+<body class="gray-bg" style="height:1000px;">
+    <div class="wrapper wrapper-content animated fadeInRight">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>计算层级跟踪关系<small>&nbsp;&nbsp;&nbsp;针对DO-178B/C标准，系统需求、高级需求、低级需求和源代码之间的跟踪关系</small></h5>
+                    </div>
+                    
+                    <div class="ibox-content">
+                        <form class="form-horizontal">
+                            <div class="form-group individual">
+                                <label class="col-sm-2 control-label">项目选择</label>
+                                <div class="col-sm-10">
+                                    <select id="selProject1" class="form-control m-b" name="project" identify="layer">
+                                        <foreach name='project' item='v'>
+                                            <option value="{$v.id}">{$v.name}</option>
+                                        </foreach>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group individual">
+                                <label class="col-sm-2 control-label">生命周期选择</label>
+
+                                <div class="col-sm-10">
+                                    <select id="selLifecycle1" class="form-control m-b" name="lifecycle">
+                                        <foreach name='lifecycle' item='v'>
+                                            <option value="{$v.id}">{$v.name}</option>
+                                        </foreach>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+
+                             <div class="form-group individual">
+                                <label class="col-sm-2 control-label">内容选择</label>
+
+                                <div class="col-sm-10">
+                                    <select id="selContent1" class="form-control m-b" name="content">
+                                        <foreach name='content' item='v'>
+                                            <option value="{$v.id}">{$v.content}</option>
+                                        </foreach>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group individual">
+                                <label class="col-sm-2 control-label">跟踪链接深度选择</label>
+
+                                <div class="col-sm-10">
+                                    <select id="selDepth" class="form-control m-b" name="depth">                                       
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group individual">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button id="calcLayerRelation" class="btn btn-primary" type="submit" style="width:300px;">计算层级跟踪关系</button>
+                                    <!-- <input class="btn btn-white" type="reset"></input> -->
+                                </div>
+                            </div>
+                            
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>        
+        </div>
+        
+        <br>
+        <div class="row" id="calcLayerResult" style="display:none;">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>层级关系</h5>
+                        <div class="pull-right" style="margin-top:-6px;">
+                            <div class="btn-group">
+                                <button id="btnGraph" class="btn btn-primary" type="button">跟踪图</button>
+                                <button id="btnMatrix" class="btn btn-white" type="button">跟踪矩阵</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="center-block">
+                            <div id="chart-container"></div>        
+                            <table id="matrix-container" style="display:none;"></table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>        
+    </div>    
+
+    <!-- 全局js -->
+    <script src="__PUBLIC__/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="__PUBLIC__/js/plugins/layer/layer.min.js"></script>  
+    <!-- 自定义js -->
+    <script src="__PUBLIC__/js/content.js"></script>   
+    <!-- Sparkline -->
+    <script src="__PUBLIC__/js/plugins/sparkline/jquery.sparkline.min.js"></script> 
+    <!-- orgChart -->
+    <script src="__PUBLIC__/js/jquery.orgchart.js"></script>
+    <!-- bootstrapTable -->
+    <script src="__PUBLIC__/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+
+    <script type="text/javascript">
+          $(document).ready(function () {   
+            
+            $('#calcLayerRelation').click(function(event) {                
+                $projectId = $('#selProject1').val();
+                $lifecycleId = $('#selLifecycle1').val();
+                $artifactId = $('#selContent1').val();   
+                $depth = $('#selDepth').val();             
+                var layerIndex;
+                $.ajax({
+                    url:"/thinkphp/index.php/Home/Calculate/ajaxLayerRelation",
+                    type:'post',
+                    dataType:'json',
+                    cache:false,
+                    data:{
+                        projectId:$projectId,
+                        lifecycleId:$lifecycleId,
+                        artifactId:$artifactId,
+                        depth:$depth
+                    },
+                    beforeSend: function() {
+                        layerIndex = layer.msg('关系生成中', {
+                          icon: 16
+                          ,time:2000000
+                          ,shade: 0.01
+                        });
+                    },
+                    success: function(json){                        
+                        if (json.status == '0') {
+                            layer.confirm(json.error, {
+                              btn: ['确定'] //按钮
+                            });
+                        } else {                            
+                            // 显示orgchart
+                            $('#chart-container').html("");
+                            $('#chart-container').orgchart({                            
+                                'data' : json.data,
+                                'nodeContent': 'content',
+                                // 'exportButton': true,
+                                // 'exportFilename': 'RelationChart',
+                                'direction': 'l2r',
+                                // 'pan':true,
+                                // 'zoom':true,
+                                'createNode': function($node, data) {
+                                    $node.on('click', function(event) {
+                                        if (!$(event.target).is('.edge')) {                    
+                                            $('#selected-node').val(data.name).data('node', $node);
+                                            // 在此处添加点击节点后的操作
+                                            layer.open({
+                                                type:0,
+                                                title:data.name,
+                                                closeBtn:0,
+                                                btn:[],
+                                                shade:0.2,
+                                                content: data.content,
+                                                skin:'layui-layer-lan',
+                                                shadeClose: true,
+                                            });
+                                        }
+                                });
+                              }                          
+                            });   
+
+                            // 生成matrix
+                            $('#matrix-container').bootstrapTable('destroy');
+                            $('#matrix-container').bootstrapTable({
+                                columns: 
+                                [  {  field: 'sysReq',
+                                    title:'系统需求'
+                                    }, 
+                                {
+                                    field: 'hlReq',
+                                    title: '高级需求'
+                                }, 
+                                {
+                                    field: 'llReq',
+                                    title: '低级需求'
+                                 },
+                                 {
+                                    field: 'scReq',
+                                    title: '源代码'
+                                 }],
+                                 data: json.matrix,
+                                 onClickCell: function(field, value, row) {                                    
+                                    $vv = value;
+                                    // alert($(this).children('span').text())
+                                    $.ajax({
+                                        url:"/thinkphp/index.php/Home/Calculate/ajaxGetContentById",
+                                        type:'post',
+                                        dataType:'json',
+                                        cache:false,
+                                        data:{
+                                            cellValue:$vv
+                                        },
+                                        success: function(ajaxJson){
+                                            console.log(ajaxJson);
+                                           layer.open({
+                                                type:0,
+                                                title:ajaxJson.name,
+                                                closeBtn:0,
+                                                btn:[],
+                                                shade:0.2,
+                                                content: ajaxJson.content,
+                                                skin:'layui-layer-lan',
+                                                shadeClose: true,
+                                            });
+                                        },
+                                        error: function(ajaxJson){
+                                            console.log(ajaxJson);
+                                            // XMLHttpRequest, textStatus, errorThrown
+                                            // alert(XMLHttpRequest.status);
+                                            // alert(XMLHttpRequest.readyState);
+                                            // alert(textStatus); // paser error;
+                                        }                                    
+
+                                    });
+                                 }
+                            });
+
+
+                            // 显示结果框
+                            $('#calcLayerResult').addClass("animated");
+                            $('#calcLayerResult').addClass("bounceInLeft");
+                            $('#calcLayerResult').attr("style","");
+                        }
+                        layer.close(layerIndex);      
+                    },
+                    error: function(){
+                        alert("error");
+                        layer.close(layerIndex);
+                    }
+                });
+
+
+                event.preventDefault();
+            }); 
+
+            $('#btnGraph').click(function() {
+                if ($(this).hasClass('btn-primary')) {
+                    return false;
+                } else {
+                    $(this).removeClass('btn-white');
+                    $(this).addClass('btn-primary');
+                    $('#btnMatrix').removeClass('btn-primary');
+                    $('#btnMatrix').addClass('btn-white');
+
+                    $('#matrix-container').hide();
+                    $('#chart-container').show();
+                }
+            }); 
+            $('#btnMatrix').click(function() {
+                if ($(this).hasClass('btn-primary')) {
+                    return false;
+                } else {
+                    $(this).removeClass('btn-white');
+                    $(this).addClass('btn-primary');
+                    $('#btnGraph').removeClass('btn-primary');
+                    $('#btnGraph').addClass('btn-white');
+
+                    $('#chart-container').hide();
+                    $('#matrix-container').show();
+                    
+                }
+            });  
+
+        });
+    </script>
+</body>
+
+</html>

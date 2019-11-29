@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title> - 基本表单</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="__PUBLIC__/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="__PUBLIC__/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="__PUBLIC__/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/animate.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/style.css?v=4.1.0" rel="stylesheet">
+
+    <style>
+        .confirmAllContent {
+            margin-right: 10px;
+        }
+    </style>
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>文档内容</h5>
+                    </div>
+                    
+                    <div class="ibox-content">
+                        <form action="{:U('DataManage/importWordHandler')}" method="post">
+                            <button class="btn btn-primary pull-right submitContent">提交</button>
+                            <button class="btn btn-primary pull-right confirmAllContent">确认全部内容</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="hidden" name="projectId" value="{$projectId}"/>
+                            <div class="ibox-title">
+                                <h5>系统需求</h5>
+                            </div>
+                            <table class="table table-bordered white-bg">                            
+                                <tbody>
+                                    <?php $i = 0;?>
+                                    <foreach name='sysReq' item='v' key='k'>
+                                        <tr id='seqTr-{$i}'>
+                                            <td class='col-sm-2'>{$k}</td>
+                                            <td align='left' style='padding-left:15px;' class='col-sm-8'>
+                                                <input id='seqInput-{$i}' class='col-sm-12' type="text" name='sysReq[{$i}-{$k}][]' value='{$v}' />
+                                            </td>  
+                                            <td class='col-sm-2'>[<a id='seqConfirm-{$i}'>确认</a>]&nbsp;&nbsp;[<a id='seqModify-{$i}'>修改</a>]&nbsp;&nbsp;[<a id='seqDelete-{$i}'>删除</a>]</td>
+                                        </tr>
+                                        <?php $i++;?>
+                                    </foreach>                                 
+                                </tbody>
+                            </table>
+
+                            <div class="ibox-title">
+                                <h5>高级需求</h5>
+                            </div>
+                            <table class="table table-bordered white-bg">                            
+                                <tbody>
+                                    <?php $j = 0;?>
+                                    <foreach name='hlReq' item='v' key='k'>
+                                        <tr id='hlTr-{$j}'>
+                                            <td class='col-sm-2'>{$k}</td>
+                                            <td class='col-sm-8' align='left' style='padding-left:15px;'>
+                                                <input id='hlInput-{$j}' class='col-sm-12' type="text" name='hlReq[{$j}-{$k}][]' value="{$v}"/>
+                                            </td>  
+                                            <td class='col-sm-2'>[<a id='hlConfirm-{$j}'>确认</a>]&nbsp;&nbsp;[<a id='hlModify-{$j}'>修改</a>]&nbsp;&nbsp;[<a  id='hlDelete-{$j}'>删除</a>]</td>
+                                        </tr>
+                                        <?php $j++;?>
+                                    </foreach>                                 
+                                </tbody>
+                            </table>
+
+                            <div class="ibox-title">
+                                <h5>低级需求</h5>
+                            </div>
+                            <table class="table table-bordered white-bg">                            
+                                <tbody>
+                                    <?php $m = 0;?>
+                                    <foreach name='llReq' item='v' key='k'>
+                                        <tr id='llTr-{$m}'>
+                                            <td class='col-sm-2'>{$k}</td>
+                                            <td align='left' style='padding-left:15px;' class='col-sm-8'>
+                                                <input id='llInput-{$m}' class='col-sm-12' type="text" name='llReq[{$m}-{$k}][]' value='{$v}' />
+                                            </td>  
+                                            <td class='col-sm-2'>[<a id='llConfirm-{$m}'>确认</a>]&nbsp;&nbsp;[<a id='llModify-{$m}'>修改</a>]&nbsp;&nbsp;[<a id='llDelete-{$m}'>删除</a>]</td>
+                                        </tr>
+                                        <?php $m++;?>
+                                    </foreach>                                 
+                                </tbody>
+                            </table>
+
+                            <div class="ibox-title">
+                                <h5>源代码</h5>
+                            </div>
+                            <table class="table table-bordered white-bg">                            
+                                <tbody>
+                                    <?php $n = 0;?>
+                                    <foreach name='sc' item='v' key='k'>
+                                        <tr id='scTr-{$n}'>
+                                            <td class='col-sm-2'>{$k}</td>
+                                            <td align='left' style='padding-left:15px;' class='col-sm-8'>
+                                                <input id='scInput-{$n}' class='col-sm-12' type="text" name='sc[{$n}-{$k}][]' value='{$v}' />
+                                            </td>  
+                                            <td class='col-sm-2'>[<a id='scConfirm-{$n}'>确认</a>]&nbsp;&nbsp;[<a id='scModify-{$n}'>修改</a>]&nbsp;&nbsp;[<a id='scDelete-{$n}'>删除</a>]</td>
+                                        </tr>
+                                        <?php $n++;?>
+                                    </foreach>                                 
+                                </tbody>
+                            </table>
+                            <if condition='$totalCount gt 20'>
+                                <button class="btn btn-primary pull-right submitContent">提交</button>
+                                <button class="btn btn-primary pull-right confirmAllContent">确认全部内容</button>    
+                            </if>
+                        </form>
+                        <div>&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 全局js -->
+    <script src="__PUBLIC__/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="__PUBLIC__/js/plugins/layer/layer.min.js"></script>  
+
+    <!-- 自定义js -->
+    <script src="__PUBLIC__/js/content.js?v=1.0.0"></script>
+
+    <!-- iCheck -->
+    <script src="__PUBLIC__/js/plugins/iCheck/icheck.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            function changeInput(buttonId, inputName, isToDisable) {
+                var id = buttonId.split("-")[1];
+                if (isToDisable) {
+                    $('input[id='+inputName+'-'+id+']').attr("style","background:#BDB76B;");
+                    $('input[id='+inputName+'-'+id+']').attr("readonly","readonly");
+                } else {
+                    $('input[id='+inputName+'-'+id+']').removeAttr("style");
+                    $('input[id='+inputName+'-'+id+']').removeAttr("readonly");
+                    $('input[id='+inputName+'-'+id+']').focus();
+                }
+            }
+            function deleteTr(buttonId, trName) {
+                var id = buttonId.split("-")[1];
+                $('tr[id='+trName+'-'+id+']').remove();
+            }
+            $('a[id*=seqConfirm]').click(function(e) {
+                changeInput($(this).attr('id'), 'seqInput', true);
+                e.preventDefault();
+            });
+            $('a[id*=seqModify]').click(function(e) {
+                changeInput($(this).attr('id'), 'seqInput', false);
+                e.preventDefault();
+            });
+            $('a[id*=seqDelete]').click(function(e) {
+                var aId = $(this).attr('id');
+                layer.confirm('确定删除吗?', {icon: 3, title:'提示'}, function(index){
+                    deleteTr(aId, 'seqTr'); 
+                    layer.close(index);
+                });
+                e.preventDefault();
+            });
+
+
+            $('a[id*=hlConfirm]').click(function(e) {
+                changeInput($(this).attr('id'), 'hlInput', true);
+                e.preventDefault();
+            });
+            $('a[id*=hlModify]').click(function(e) {
+                changeInput($(this).attr('id'), 'hlInput', false);
+                e.preventDefault();
+            });
+            $('a[id*=hlDelete]').click(function(e) {
+                var aId = $(this).attr('id');
+                layer.confirm('确定删除吗?', {icon: 3, title:'提示'}, function(index){
+                    deleteTr(aId, 'hlTr');                  
+                    layer.close(index);
+                });                
+                e.preventDefault();
+            });
+
+
+            $('a[id*=llConfirm]').click(function(e) {
+                changeInput($(this).attr('id'), 'llInput', true);
+                e.preventDefault();
+            });
+            $('a[id*=llModify]').click(function(e) {
+                changeInput($(this).attr('id'), 'llInput', false);
+                e.preventDefault();
+            });
+            $('a[id*=llDelete]').click(function(e) {
+                var aId = $(this).attr('id');
+                layer.confirm('确定删除吗?', {icon: 3, title:'提示'}, function(index){
+                    deleteTr(aId, 'llTr'); 
+                    layer.close(index);
+                });                
+                e.preventDefault();
+            });
+
+
+            $('a[id*=scConfirm]').click(function(e) {
+                changeInput($(this).attr('id'), 'scInput', true);
+                e.preventDefault();
+            });
+            $('a[id*=scModify]').click(function(e) {
+                changeInput($(this).attr('id'), 'scInput', false);
+                e.preventDefault();
+            });
+            $('a[id*=scDelete]').click(function(e) {
+                var aId = $(this).attr('id');
+                layer.confirm('确定删除吗?', {icon: 3, title:'提示'}, function(index){
+                    deleteTr(aId, 'scTr');
+                    layer.close(index);
+                });                
+                e.preventDefault();
+            });
+
+            $('.confirmAllContent').click(function(e) {
+                $('input').attr("style","background:#BDB76B;");
+                $('input').attr("readonly","readonly");
+                e.preventDefault();
+            });
+
+            $('.submitContent').click(function(e) {                
+                $('input').each(function() {                    
+                    if (typeof($(this).attr('readonly')) == 'undefined') {
+                        layer.alert("仍有内容没有确认，请检查后提交！", {title:"提示"});
+                        e.preventDefault();                        
+                    }
+                });                
+            });
+
+
+        });
+    </script>
+
+    
+    
+
+</body>
+
+</html>

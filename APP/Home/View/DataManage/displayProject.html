@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title> - 基本表单</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="__PUBLIC__/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="__PUBLIC__/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <!-- jqgrid-->
+    <link href="__PUBLIC__/css/plugins/jqgrid/ui.jqgrid.css?0820" rel="stylesheet">
+
+    <link href="__PUBLIC__/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/animate.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/style.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>录入项目数据</h5>
+                    </div>
+                    
+                    <div class="ibox-content">
+                        <form action="{:U('projectHandler')}" method="post" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">项目名称</label>
+
+                                <div class="col-sm-10">
+                                    <!-- <textarea class="form-control" name="content"></textarea> -->
+                                    <input type="text" name='name' class="form-control">
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>                            
+                            
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" type="submit">保存内容</button>
+                                    <input class="btn btn-white" type="reset"></input>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper wrapper-content  animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox ">                        
+                        <div class="jqGrid_wrapper">
+                            <table id="table_list_2"></table>
+                            <div id="pager_list_2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 全局js -->
+    <script src="__PUBLIC__/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js?v=3.3.6"></script>
+
+    <!-- Peity -->
+    <script src="__PUBLIC__/js/plugins/peity/jquery.peity.min.js"></script>
+
+    <!-- jqGrid -->
+    <script src="__PUBLIC__/js/plugins/jqgrid/i18n/grid.locale-cn.js?0820"></script>
+    <script src="__PUBLIC__/js/plugins/jqgrid/jquery.jqGrid.min.js?0820"></script>
+
+    <!-- 自定义js -->
+    <script src="__PUBLIC__/js/content.js?v=1.0.0"></script>
+
+    
+    <script>
+        $(document).ready(function () {
+            
+
+            $.jgrid.defaults.styleUI = 'Bootstrap';
+            
+            // Configuration for jqGrid Example 2
+            $("#table_list_2").jqGrid({
+                // data: mydata,
+                datatype: "json",
+                url: "{:U('listProject')}",      
+                editurl:"{:U('editProject')}",          
+                mtype: "POST",
+                height: 250,
+                autowidth: true,
+                shrinkToFit: true,
+                rowNum: 20,
+                rowList: [10, 20, 30],
+                colNames: ['序号', '项目名称'],
+                colModel: [
+                    {
+                        name: 'id',
+                        index: 'id',
+                        editable: false,
+                        width: 60,
+                        sortable: false,
+                        search: false
+                    },
+                    {
+                        name: 'name',
+                        index: 'name',
+                        editable: true,
+                        width: 150,
+                        sortable: false
+                    },
+                    
+                ],
+                pager: "#pager_list_2",
+                viewrecords: true,
+                caption: "项目数据",
+                add: true,
+                edit: true,
+                addtext: 'Add',
+                edittext: 'Edit',
+                hidegrid: false
+            });
+
+            // Add selection
+            $("#table_list_2").setSelection(4, true);
+
+
+            // Setup buttons
+            $("#table_list_2").jqGrid('navGrid', '#pager_list_2', {
+                edit: true,
+                add: false,
+                del: true,
+                search: true
+            }, 
+
+            {
+                height: 200,
+                reloadAfterSubmit: true
+            });
+
+            //$("#table_list_2").jqGrid('searchGrid',{sopt:['cn','eq','ne']});
+
+            // Add responsive to jqGrid
+            $(window).bind('resize', function () {
+                var width = $('.jqGrid_wrapper').width();
+                $('#table_list_1').setGridWidth(width);
+                $('#table_list_2').setGridWidth(width);
+            });
+        });
+    </script>
+
+    
+    
+
+</body>
+
+</html>

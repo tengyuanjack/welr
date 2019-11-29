@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--360浏览器优先以webkit内核解析-->
+
+
+    <title> - 主页示例</title>
+
+    <link rel="shortcut icon" href="__PUBLIC__/favicon.ico"> <link href="__PUBLIC__/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="__PUBLIC__/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <link href="__PUBLIC__/css/animate.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/style.css?v=4.1.0" rel="stylesheet">
+    <style>
+        .big-title{
+            font-weight: bold;
+            font-size:30px;
+        }
+        .big-vice-title{
+            font-size: 15px;
+        }
+        .big-split{
+            height: 100px;
+        }
+        .set-opacity{
+            opacity:0.7;
+        }
+        .white-font{
+            color:#000000;
+        }
+        .panel{
+            margin: 5px;
+        }
+        .foot{            
+            bottom:0;            
+            margin-top: 150px;
+        }
+        .big-button0{
+            height: 40px;
+        }
+        .ind-text{
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox-content m-b-sm border-bottom">
+                    <div class="p-xs">
+                        <div class="pull-left m-r-md">
+                            <i class="fa fa-globe text-navy mid-icon"></i>
+                        </div>
+                        <h2 class='big-title'>适航领域软件需求跟踪系统</h2>
+                        <span class='big-vice-title'>Software Requirement Traceability System in Airworthiness</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row big-split"></div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-xs-3"></div>
+                <div class="col-xs-3">
+                    <div class="btn btn-lg big-button0 center-block <if condition='$exp eq 1'>btn-white<else/>btn-info</if>" id="selection1">
+                        <div class="text-primary font-thin">演示用<if condition='$exp neq 1'><i class="fa fa-check"></i></if></div>            
+                    </div>
+                </div>
+                <div class="col-xs-3 center-block">
+                    <div class="btn btn-lg big-button0 center-block  <if condition='$exp eq 1'>btn-info<else/>btn-white</if>" id='selection2'>
+                        <div class="text-primary font-thin">实验用<if condition='$exp eq 1'><i class="fa fa-check"></i></if></div>    
+                    </div>
+                </div>                
+                <div class="col-xs-3"></div>
+            </div>
+        </div>       
+        <div class="row big-split"></div>
+        
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row row-sm text-center">     
+                    <div class="col-xs-3">
+                       <a class="panel padder-v item btn btn-lg btn-white big-button1" href="{:U('DataManage/displayArtifactData')}">
+                            <div class="h1 text-info font-thin h1 ind-text">&nbsp;软件数据维护&nbsp;</div>
+                            <span class="text-muted text-xs">software artifact maintenance</span>                
+                        </a>
+                    </div>  
+                    <div class="col-xs-3">
+                        <a class="panel padder-v item btn btn-lg btn-primary big-button2" href="{:U('Calculate/tupleRelation')}">
+                            <div class="h1 text-fff font-thin h1 ind-text">两文档跟踪关系</div>
+                            <span class="text-muted text-xs">tuple relationship</span>                        
+                        </a>
+                    </div>  
+                    <div class="col-xs-3">
+                        <a class="panel padder-v item btn btn-lg btn-info big-button3" href="{:U('Calculate/layerRelation')}">
+                            <div class="h1 text-fff font-thin h1 ind-text">&nbsp;层级跟踪关系&nbsp;</div>
+                            <span class="text-muted text-xs">layer relationship</span>                        
+                        </a>
+                    </div>   
+                    <div class="col-xs-3">
+                        <a class="panel padder-v item btn btn-lg btn-success big-button4" href="{:U('Audit/hlReqToSysReq')}">
+                            <div class="font-thin h1 ind-text">&nbsp;&nbsp;适航性判定&nbsp;&nbsp;</div>
+                            <span class="text-muted text-xs">check airworthiness</span>
+                        </a>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="row foot text-center">
+            @2018·北京航空航天大学·ALL RIGHTS RESERVED·北京市海淀区学院路37号北京航空航天大学
+        </div>
+    </div>
+
+     <div id="modal-form" class="modal fade" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-8 b-r">
+                            <h3 class="m-t-none m-b">登录</h3>
+                            <div role="form" >
+                                <div class="form-group">
+                                    <label>用户名：</label>
+                                    <input type="text" name="nickname" placeholder="请输入用户名" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>密码：</label>
+                                    <input type="password" name="password" placeholder="请输入密码" class="form-control">
+                                </div>
+                                <div>
+                                    <button id='loginBtn' class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit"><strong>登录</strong>
+                                    </button>
+                                    <span id='hidden-identify' class='hide'>index_v1</span>
+                                    <!-- <label>
+                                        <input type="checkbox" class="i-checks">自动登录</label> -->
+                                </div>
+                            </div>
+                        </div>
+                       <div class="col-sm-4">
+                        <img src="__PUBLIC__/img/tr.jpeg" alt="登录logo"  class='img-responsive'>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 全局js -->
+    <script src="__PUBLIC__/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="__PUBLIC__/js/plugins/layer/layer.min.js"></script>
+    
+    <!-- 自定义js -->
+    <script src="__PUBLIC__/js/content.js"></script>
+    
+     <if condition="$needLogin">
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#modal-form').modal('toggle');
+            });
+            $('.big-button').hover(function() {
+                $(this).removeClass('btn-white');
+                $(this).addClass('btn-info');
+            });
+        </script>
+    </if>   
+    <script type="text/javascript">                   
+        $('#selection1').click(function() {
+            $(this).addClass('btn-info');
+            $(this).removeClass('btn-white');
+            $('#selection2').removeClass('btn-info');
+            $('#selection2').addClass('btn-white');
+            $(this).find('div').html('演示用<i class="fa fa-check"></i>');
+            $('#selection2').find('div').html('实验用');
+            $.ajax({
+                url:"/thinkphp/index.php/Home/Index/ajaxSetExperiment",
+                type:'post',
+                dataType:'json',
+                data:{
+                    experiment:2
+                },
+                success: function(json){                    
+                },
+                error: function(){
+                    alert("error");
+                }
+            });            
+        });
+        $('#selection2').click(function() {
+            $(this).addClass('btn-info');
+            $(this).removeClass('btn-white');
+            $('#selection1').removeClass('btn-info');
+            $('#selection1').addClass('btn-white');
+            $(this).find('div').html('实验用<i class="fa fa-check"></i>');
+            $('#selection1').find('div').html('演示用');
+            $.ajax({
+                url:"/thinkphp/index.php/Home/Index/ajaxSetExperiment",
+                type:'post',
+                dataType:'json',
+                data:{
+                    experiment:1
+                },
+                success: function(json){                    
+                },
+                error: function(){
+                    alert("error");
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

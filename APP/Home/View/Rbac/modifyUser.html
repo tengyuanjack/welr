@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title> - 用户管理</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="__PUBLIC__/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="__PUBLIC__/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <!-- jqgrid-->
+    <link href="__PUBLIC__/css/plugins/jqgrid/ui.jqgrid.css?0820" rel="stylesheet">
+
+    <link href="__PUBLIC__/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/animate.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/style.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>修改用户信息</h5>
+                    </div>
+                    
+                    <div class="ibox-content">
+                        <form action="{:U('modifyUserHandler')}" method="post" class="form-horizontal">
+                            <div class="form-group">                                
+                                <label class="col-sm-2 control-label">用户名</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name='nickname' class="form-control" value='{$user.nickname}'>
+                                </div>
+                                <br/><br/> 
+                                <label class="col-sm-2 control-label">所属角色</label>
+                                <div class="col-sm-10">
+                                    <select class='form-control' name="userRole" id="userRole">
+                                        <foreach name='roles' item='v'>
+                                            <option value="{$v.id}" <if condition="$role_user['role_id'] eq $v['id']">selected</if> >{$v.name}</option>
+                                        </foreach>
+                                    </select>
+                                </div>
+                                <br/><br/> 
+                                <label class="col-sm-2 control-label">真实姓名</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name='name' class="form-control" value="{$user.name}">
+                                </div>
+                                <br/><br/> 
+                                <label class="col-sm-2 control-label">工作单位</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name='unit' class="form-control" value="{$user.unit}">
+                                </div>
+                                <br/><br/> 
+                                <label class="col-sm-2 control-label">职务</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name='position' class="form-control" value="{$user.position}">
+                                </div>
+                            </div>                            
+                            <div class="hr-line-dashed"></div> 
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <input type="hidden" name='id' value='{$user.id}'>
+                                    <button class="btn btn-primary" type="submit">保存内容</button>
+                                    <input class="btn btn-white" type="reset"></input>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <!-- 全局js -->
+    <script src="__PUBLIC__/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js?v=3.3.6"></script>
+
+    <!-- Peity -->
+    <script src="__PUBLIC__/js/plugins/peity/jquery.peity.min.js"></script>
+
+    <!-- jqGrid -->
+    <script src="__PUBLIC__/js/plugins/jqgrid/i18n/grid.locale-cn.js?0820"></script>
+    <script src="__PUBLIC__/js/plugins/jqgrid/jquery.jqGrid.min.js?0820"></script>
+
+    <!-- 自定义js -->
+    <script src="__PUBLIC__/js/content.js?v=1.0.0"></script>
+
+</body>
+
+</html>

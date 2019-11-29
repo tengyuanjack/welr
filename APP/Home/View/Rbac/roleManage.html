@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title> - 角色管理</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="__PUBLIC__/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="__PUBLIC__/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <!-- jqgrid-->
+    <link href="__PUBLIC__/css/plugins/jqgrid/ui.jqgrid.css?0820" rel="stylesheet">
+
+    <link href="__PUBLIC__/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/animate.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/style.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>添加角色</h5>
+                    </div>
+                    
+                    <div class="ibox-content">
+                        <form action="{:U('addRoleHandler')}" method="post" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">角色名称</label>
+                                <div class="col-sm-10">
+                                    <!-- <textarea class="form-control" name="content"></textarea> -->
+                                    <input type="text" name='name' class="form-control">
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>                            
+                             <div class="form-group">
+                                <label class="col-sm-2 control-label">角色描述</label>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control" name="remark"></textarea>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div> 
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" type="submit">保存内容</button>
+                                    <input class="btn btn-white" type="reset"></input>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <div class="wrapper wrapper-content  animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox ">     
+                    <div class="ibox-title">
+                        <h5>角色列表</h5>
+                    </div>                   
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>角色名称</th>
+                                    <th>角色描述</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <foreach name='roles' item='v' key='k'>
+                                    <tr>
+                                        <td>{$k+1}</td>
+                                        <td>{$v.name}</td>
+                                        <td>{$v.remark}</td>
+                                        <td><a href="{:U('modifyRole',array('id'=>$v['id']))}">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{:U('assignAccess', array('role_id'=>$v['id']))}">分配权限</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{:U('deleteRole',array('id'=>$v['id']))}" class='btnDelete'>删除</a></td>
+                                    </tr>
+                                </foreach>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 全局js -->
+    <script src="__PUBLIC__/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js?v=3.3.6"></script>
+
+    <!-- Peity -->
+    <script src="__PUBLIC__/js/plugins/peity/jquery.peity.min.js"></script>
+
+    <!-- jqGrid -->
+    <script src="__PUBLIC__/js/plugins/jqgrid/i18n/grid.locale-cn.js?0820"></script>
+    <script src="__PUBLIC__/js/plugins/jqgrid/jquery.jqGrid.min.js?0820"></script>
+
+    <!-- 自定义js -->
+    <script src="__PUBLIC__/js/content.js?v=1.0.0"></script>
+
+    
+     <script type="text/javascript">
+        $('.btnDelete').click(function(e) {
+            if (!confirm("确定删除吗？", "提示")) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
+    
+    
+
+</body>
+
+</html>

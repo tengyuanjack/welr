@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title> - 分配权限</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="__PUBLIC__/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="__PUBLIC__/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+    <!-- jqgrid-->
+    <link href="__PUBLIC__/css/plugins/jqgrid/ui.jqgrid.css?0820" rel="stylesheet">
+
+    <link href="__PUBLIC__/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/animate.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/style.css?v=4.1.0" rel="stylesheet">
+
+    <style>
+        .level1{
+            margin-left: 5px;
+        }
+        .level1-size{
+            font:16px bold;
+        }
+        .level2{            
+            height:20px;
+            margin-left: 15px;
+            margin-top: 5px;
+            line-height: 20px;
+        }
+        .level3{
+            margin-left: 25px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+    </style>
+
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>分配权限</h5>
+                    </div>
+                    
+                    <div class="ibox-content" id='setAccess'>
+                        <form action="{:U('Rbac/assignAccessHandler')}" method='post'>
+                            <foreach name='node' item='app'>
+                                <div class='level1'>
+                                    {$app.remark}
+                                    <input type="checkbox" name='access[]' value='{$app.id}_1' level='1' <if condition='$app["access"]'>checked='checked'</if>>
+                                    <foreach name='app.child' item='action'>
+                                        <dl>
+                                        <dt class='level2'>
+                                            {$action.remark}
+                                            <input type="checkbox" name='access[]' value='{$action.id}_2' level='2' <if condition='$action["access"]'>checked='checked'</if>>
+                                            <foreach name='action.child' item='method'>
+                                                <dd class='level3'>
+                                                    {$method.remark}
+                                                    <input type="checkbox" name='access[]' value='{$method.id}_3' level='3' <if condition='$method["access"]'>checked='checked'</if>>
+                                                </dd>
+                                            </foreach>
+                                        </dt>
+                                        </dl>
+                                    </foreach>
+                                </div>
+                            </foreach>
+                            <div align='center'>
+                                <input type="hidden" name='role_id' value='{$rid}'>
+                                <input type="submit" class='btn btn-primary' value='保存配置'>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 全局js -->
+    <script src="__PUBLIC__/js/jquery.min.js?v=2.1.4"></script>
+    <script src="__PUBLIC__/js/bootstrap.min.js?v=3.3.6"></script>
+
+    <!-- Peity -->
+    <script src="__PUBLIC__/js/plugins/peity/jquery.peity.min.js"></script>
+
+    <!-- jqGrid -->
+    <script src="__PUBLIC__/js/plugins/jqgrid/i18n/grid.locale-cn.js?0820"></script>
+    <script src="__PUBLIC__/js/plugins/jqgrid/jquery.jqGrid.min.js?0820"></script>
+
+    <!-- 自定义js -->
+    <script src="__PUBLIC__/js/content.js?v=1.0.0"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#setAccess input[level=1]' ).click(function(){
+                if($(this).is(':checked') == true){
+                    $(this).parents('.level1').find('input[type=checkbox]').each(function(){
+                        this.checked = true;
+                    });
+                }else{
+                    $(this).parents('.level1').find('input[type=checkbox]').removeAttr('checked');
+                }
+                
+            });
+            $('#setAccess input[level=2]' ).click(function(){
+                if($(this).is(':checked') == true){
+                    $(this).parents('dl').find('input[type=checkbox]').each(function(){
+                        this.checked = true;
+                    });
+                    $(this).parents('.level1').find('input[level=1]').each(function(){
+                        this.checked = true;
+                    });
+                }else{
+                    $(this).parents('dl').find('input[type=checkbox]').removeAttr('checked');
+                }
+                
+            });
+            $('#setAccess input[level=3]' ).click(function(){       
+                if($(this).is(':checked') == true){
+                    $(this).parents('dl').find('input[level=2]').each(function(){
+                        this.checked = true;
+                    });
+                    $(this).parents('.level1').find('input[level=1]').each(function(){
+                        this.checked = true;
+                    });
+                }
+            });
+        });
+    </script>
+    
+</body>
+
+</html>

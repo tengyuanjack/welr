@@ -1,0 +1,317 @@
+[ 2018-02-23T16:27:45+08:00 ] 192.168.1.103 /thinkphp/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000114s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000522s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /var/www/html/thinkphp/APP/Home/Controller/IndexController.class.php 第 102 行.
+NOTIC: [8] Undefined index: id /var/www/html/thinkphp/APP/Home/Controller/IndexController.class.php 第 19 行.
+NOTIC: [8] Undefined index: username /var/www/html/thinkphp/APP/Home/Controller/IndexController.class.php 第 20 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000105s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000172s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011529s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011586s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.019930s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.019984s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.008121s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008176s ]
+
+[ 2018-02-23T16:27:45+08:00 ] 192.168.1.103 /thinkphp/index.php/Home/Index/index_v1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000077s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000462s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000533s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /var/www/html/thinkphp/APP/Home/Controller/IndexController.class.php 第 102 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000136s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.073046s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.073101s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000148s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000193s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000524s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000601s ]
+
+[ 2018-02-23T16:37:53+08:00 ] 192.168.1.102 /thinkphp/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000110s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000550s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /var/www/html/thinkphp/APP/Home/Controller/IndexController.class.php 第 102 行.
+NOTIC: [8] Undefined index: id /var/www/html/thinkphp/APP/Home/Controller/IndexController.class.php 第 19 行.
+NOTIC: [8] Undefined index: username /var/www/html/thinkphp/APP/Home/Controller/IndexController.class.php 第 20 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000178s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011592s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011658s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000150s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000197s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000516s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000576s ]
+
+[ 2018-02-23T16:37:54+08:00 ] 192.168.1.102 /thinkphp/index.php/Home/Index/index_v1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000111s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000539s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /var/www/html/thinkphp/APP/Home/Controller/IndexController.class.php 第 102 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000147s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006840s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006903s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000149s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000195s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000499s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000553s ]
+
+[ 2018-02-23T16:37:58+08:00 ] 192.168.1.102 /thinkphp/index.php/Home/Rbac/userManage.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000075s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000519s ]
+
+[ 2018-02-23T16:38:16+08:00 ] 192.168.1.102 /thinkphp/index.php/Home/Rbac/roleManage.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000095s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000385s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000445s ]
+
+[ 2018-02-23T16:38:17+08:00 ] 192.168.1.102 /thinkphp/index.php/Home/Audit/hlReqToSysReq.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000092s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000441s ]
+
+[ 2018-02-23T16:38:17+08:00 ] 192.168.1.102 /thinkphp/index.php/Home/Index/index_v1/needLogin/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000063s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000408s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /var/www/html/thinkphp/APP/Home/Controller/IndexController.class.php 第 102 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005477s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005527s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000159s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000195s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000408s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000452s ]
+
+[ 2018-02-23T16:38:23+08:00 ] 192.168.1.102 /thinkphp/index.php/Home/Index/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000063s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000368s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000419s ]
+NOTIC: [2048] Declaration of Home\Controller\IndexController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') /var/www/html/thinkphp/APP/Home/Controller/IndexController.class.php 第 102 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0386s ]
+SQL: SELECT * FROM `user` WHERE ( nickname="root" )  [ RunTime:0.0006s ]
+
+[ 2018-02-23T16:38:24+08:00 ] 192.168.1.102 /thinkphp/index.php/Home/Audit/hlReqToSysReq.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000060s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000376s ]
+NOTIC: [8] Use of undefined constant GROUP_NAME - assumed 'GROUP_NAME' /var/www/html/thinkphp/APP/Home/Controller/CommonController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `project`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000134s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018006s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018065s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000118s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000156s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000393s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000439s ]
+
+[ 2018-02-23T16:38:25+08:00 ] 192.168.1.102 /thinkphp/index.php/Home/Audit/llReqToHlReq.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000075s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000501s ]
+NOTIC: [8] Use of undefined constant GROUP_NAME - assumed 'GROUP_NAME' /var/www/html/thinkphp/APP/Home/Controller/CommonController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `project`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000148s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008837s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008898s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000139s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000202s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000485s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000540s ]
+
+[ 2018-02-23T16:38:26+08:00 ] 192.168.1.102 /thinkphp/index.php/Home/Audit/scToLlReq.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000071s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000425s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000481s ]
+NOTIC: [8] Use of undefined constant GROUP_NAME - assumed 'GROUP_NAME' /var/www/html/thinkphp/APP/Home/Controller/CommonController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `project`  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000148s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008565s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008624s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000132s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000179s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000476s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000534s ]
+
+[ 2018-02-23T16:38:28+08:00 ] 192.168.1.102 /thinkphp/index.php/Home/Rbac/userManage.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000071s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000425s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000482s ]
+
+[ 2018-02-23T16:38:29+08:00 ] 192.168.1.102 /thinkphp/index.php/Home/Rbac/roleManage.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000075s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000514s ]
+
+[ 2018-02-23T16:38:29+08:00 ] 192.168.1.102 /thinkphp/index.php/Home/Rbac/userManage.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000107s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000566s ]
+
+[ 2018-02-23T16:38:40+08:00 ] 192.168.1.102 /thinkphp/index.php/Home/DataManage/displayArtifactData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000107s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000552s ]
+NOTIC: [8] Use of undefined constant GROUP_NAME - assumed 'GROUP_NAME' /var/www/html/thinkphp/APP/Home/Controller/CommonController.class.php 第 18 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005631s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005684s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000115s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000372s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000416s ]
+
+[ 2018-02-23T16:38:40+08:00 ] 192.168.1.102 /thinkphp/index.php/Home/DataManage/listArtifactData.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000076s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000429s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000489s ]
+NOTIC: [8] Use of undefined constant GROUP_NAME - assumed 'GROUP_NAME' /var/www/html/thinkphp/APP/Home/Controller/CommonController.class.php 第 18 行.
+NOTIC: [8] Undefined variable: oriWhere /var/www/html/thinkphp/APP/Home/Controller/DataManageController.class.php 第 92 行.
+SQL: select count(*) as rows from artifact [ RunTime:0.0104s ]
+SQL: select id, pid, class,name, content from artifact [ RunTime:0.0039s ]
+SQL: select id, pid, class,name, content from artifact order by 1 asc limit 0, 20 [ RunTime:0.0004s ]
+NOTIC: [2] Creating default object from empty value /var/www/html/thinkphp/APP/Home/Controller/DataManageController.class.php 第 114 行.
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `project` WHERE ( id=1 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `lifecycle` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `lifecycle` WHERE ( id=5 )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `project` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lifecycle` WHERE ( id=6 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `project` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lifecycle` WHERE ( id=7 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `project` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lifecycle` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `project` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lifecycle` WHERE ( id=1 )  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `project` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lifecycle` WHERE ( id=2 )  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `project` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lifecycle` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `project` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lifecycle` WHERE ( id=1 )  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `project` WHERE ( id=3 )  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lifecycle` WHERE ( id=2 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `project` WHERE ( id=3 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lifecycle` WHERE ( id=3 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `project` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lifecycle` WHERE ( id=2 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `project` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lifecycle` WHERE ( id=3 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `project` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lifecycle` WHERE ( id=8 )  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `project` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lifecycle` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `project` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lifecycle` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `project` WHERE ( id=2 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lifecycle` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `project` WHERE ( id=2 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lifecycle` WHERE ( id=1 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `project` WHERE ( id=2 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lifecycle` WHERE ( id=2 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `project` WHERE ( id=2 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lifecycle` WHERE ( id=2 )  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `project` WHERE ( id=2 )  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lifecycle` WHERE ( id=3 )  [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000537s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000589s ]
+
